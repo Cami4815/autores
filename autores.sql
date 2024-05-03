@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2024 a las 23:31:02
+-- Tiempo de generación: 03-05-2024 a las 23:41:46
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `autores`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `autor`
+--
+
+CREATE TABLE `autor` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `nacimiento` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `autor`
+--
+
+INSERT INTO `autor` (`id`, `nombre`, `apellido`, `nacimiento`) VALUES
+(1, 'jane ', 'austen', '1775-12-16'),
+(2, 'paulo ', 'cohelo', '1947-08-24'),
+(3, 'hermann ', 'hesse', '1877-07-02'),
+(4, 'gabriel', 'garcía_marquez', '1927-03-06'),
+(5, 'george', 'orwell', '1903-06-25');
 
 -- --------------------------------------------------------
 
@@ -57,6 +81,12 @@ INSERT INTO `libro` (`id`, `nombre`, `fecha_publicacion`, `genero`, `precio`, `c
 --
 
 --
+-- Indices de la tabla `autor`
+--
+ALTER TABLE `autor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `libro`
 --
 ALTER TABLE `libro`
@@ -66,6 +96,12 @@ ALTER TABLE `libro`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `autor`
+--
+ALTER TABLE `autor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `libro`
